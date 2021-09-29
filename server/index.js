@@ -1,15 +1,29 @@
+//env variable
+require("dotenv").config();
+
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-const zomoto = express();
 
-zomoto.use(express.json);
-zomoto.use(express.urlencoded({extended:false}));
-zomoto.use(helmet());
-zomoto.use(cors());
+//api
+import Auth from './API/Auth';
+//Database Connection
+import ConnectDB from './database/connection';
 
-zomoto.get("/",(req,res)=>{ 
-    res.json({messgae:"setup succusfully!!!!"});
-})
+const zomato = express();
 
-zomoto.listen(4000,()=>console.log("server is running"))
+zomato.use(express.json());
+zomato.use(express.urlencoded({extended: false}));
+zomato.use(helmet());
+zomato.use(cors());
+
+//For Application Routes localhost:4000/auth/signup
+zomato.use("/auth",Auth)
+
+
+zomato.get("/", (req,res) => res.json({message: "SetUp Success Yay!!"}));
+
+
+zomato.listen(4001,()=>
+ConnectDB().then(()=>console.log("server is running")).catch(()=>console.log("faild")));
+
