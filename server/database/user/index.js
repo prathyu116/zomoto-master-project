@@ -9,13 +9,14 @@ const UserSchema = new mongoose.Schema({
     adress: [{ details: { type: String }, for: { type: String } }],
     phoneNumber: [{ type: Number }]
 },
-{
-    timestamps:true
-})
-UserSchema.methods.generateJwtToken = function() {
-    return jwt.sign({user: this._id.toString()}, "ZomatoApp");
-  };
-UserSchema.statics.findEmailAndPhone = async ({ email, phoneNumber }) => {
+    {
+        timestamps: true
+    })
+//generate jwt token
+UserSchema.methods.generateJwtToken = function () {
+    return jwt.sign({ user: this._id.toString() }, "ZomatoApp");
+};
+UserSchema.statics.findByEmailAndPhone = async ({ email, phoneNumber }) => {
     //check whether the email exists
     const checkUserByEmail = await Usermodel.findOne({ email });
     //check whether the phoneNumber Exists
@@ -24,6 +25,20 @@ UserSchema.statics.findEmailAndPhone = async ({ email, phoneNumber }) => {
         throw new Error("User already exist");
     }
     return false;
+}
+
+
+UserSchema.statics.findByEmailAndPassword = async ({ email, password }) => {
+    //check whether the user exists
+    const user = await Usermodel.findOne({ email });
+    console.log(user);
+    if (!user) throw Error("User Does Not Exist")
+    //compare password
+    const doesPasswordMatch = await bcrypt.compare(password, user.password)
+    if (!doesPasswordMatch) {
+        throw new Error("Invalid Pasword");
+    }
+    return user;
 }
 UserSchema.pre("save", function (next) {
     const user = this; //ippolulla user
