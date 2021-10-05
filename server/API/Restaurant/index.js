@@ -1,3 +1,4 @@
+import express from 'express';
 import { RestaurantModel } from "../../database/allModel";
 const Router = express.Router();
 
