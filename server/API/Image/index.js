@@ -1,27 +1,22 @@
 //Libraries
 //require('dotenv').config();
 import express from "express";
-import AWS from "aws-sdk";
 import multer from "multer";
 
 //Database model
 import {ImageModel} from "../../database/allModel";
 
 //Utilities
-// import {s3Upload} from "../../Utils/AWS/s3";
+import {s3Upload} from "../../Utilis/AWS/s3";
 
 const Router = express.Router();
-
-const s3Bucket = new AWS.S3({
-    accessKeyId: process.env.AWS_S3_ACCES_KEY,
-    secretAccessKey: process.env.AWS_S3_SECRET_KEY,
-    region: "ap-south-1"
-  });
-  
-
 // Multer config
 const storage = multer.memoryStorage();
 const upload = multer({storage});
+
+
+
+
 
 /*
 Route            /
@@ -37,7 +32,7 @@ Router.post("/", upload.single("file") ,async(req,res)=> {
 
  //S3 bucket options
  const bucketOptions = {
-   Bucket: "shapeaijulybatch123",
+   Bucket: "zomatointernship",
    Key: file.originalname,
    Body: file.buffer,
    ContentType: file.mimetype,
@@ -45,12 +40,12 @@ Router.post("/", upload.single("file") ,async(req,res)=> {
  };
 
 
-//  const uploadImage = await s3Upload(bucketOptions);
+ const uploadImage = await s3Upload(bucketOptions);
 
-//  return res.status(200).json({ uploadImage });
+ return res.status(200).json({ uploadImage });
 
   } catch (error) {
-return res.status(500).json({error: error.message});
+   return res.status(500).json({error: error.message});
   }
 });
 
