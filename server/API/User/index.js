@@ -1,7 +1,8 @@
 import express from "express";
 
 import {Usermodel} from "../../database/allModel";
-
+//validation
+import {ValidateUser } from "./../../Validation/user"
 const Router = express.Router();
 
 /*
@@ -15,6 +16,7 @@ Method           GET
 
 Router.get("/:_id", async(req,res)=> {
   try {
+    await ValidateUser(req.params);
     const {_id} = req.params;
     const getUser = await Usermodel.findById(_id);
     return res.json({user: getUser});

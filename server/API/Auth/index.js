@@ -1,5 +1,6 @@
 import express from 'express';
 // import passport from 'passport';
+import {ValidateSignup,ValidateSignin} from '../../Validation/auth';
 const Router = express.Router();
 
 //Models 
@@ -15,6 +16,7 @@ Method        POST
 
 Router.post("/signup", async (req, res) => {
     try {
+        await ValidateSignup(req.body.credentials);
         //Check whether email or phone number exists
         await Usermodel.findEmailAndPhone(req.body.credentials);
 
@@ -47,7 +49,7 @@ Method        POST
 */
 Router.post("/signin", async (req, res) => {
     try {
-
+        await ValidateSignin(req.body.credentials);
         const user = await Usermodel.findByEmailAndPassword( req.body.credentials );
 
  //JWT Auth Token

@@ -8,6 +8,7 @@ import helmet from "helmet";
 
 //congig google auth
 // import googleAuthConfig from './config/google.config';
+import routeConfig from "./config/route.config";
 
 //api
 import Auth from './API/Auth';
@@ -19,6 +20,7 @@ import  Order  from "./API/Orders";
 import  Review  from "./API/Review";
 //Database Connection
 import ConnectDB from './database/connection';
+import passport from "passport";
 
 const zomato = express();
 
@@ -31,6 +33,7 @@ zomato.use(cors());
 
 //passport configuration
 // googleAuthConfig(passport)
+routeConfig(passport);
 
 //For Application Routes localhost:4000/auth/signup
 zomato.use("/auth",Auth);
