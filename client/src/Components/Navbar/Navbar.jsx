@@ -60,7 +60,7 @@ const LgNav = () => {
 
 
                     <div className="relative w-full h-full">
-                        <input type="search" className="w-full h-full border-r-2 outline-none" placeholder="3rd mile Bus Stop,periya" />
+                        <input type="text" className="w-full h-full border-r-2 outline-none" placeholder="3rd mile Bus Stop,periya" />
 
                         <AiFillCaretDown className=" absolute right-2 bottom-1" />
                     </div>
@@ -78,10 +78,10 @@ const LgNav = () => {
 
             </div>
             <div className="flex items-center  gap-3 ml-20">
-                <span className="h-12 w-12 border p-2 border-blue-300 text-blue-400 rounded-full">
+                <span className="h-12 w-12 border p-2 border-blue-300 bg-blue-200 text-blue-400 rounded-full">
                     <FaPizzaSlice className="h-full w-full"/>
                 </span>
-                <span className="text-black flex flex-row  items-center gap-1  cursor-pointer	 ">
+                <span className="text-black flex flex-row  items-center gap-1  cursor-pointer">
                    <h3 className="text-lg text-gray">Prathyu</h3> 
                    <span className="w-6 h-8 text-gray">
                    <BiChevronDown className="w-full h-full " />
