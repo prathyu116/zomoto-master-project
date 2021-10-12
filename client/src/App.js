@@ -3,6 +3,7 @@ import React from "react";
 import HomeLayoutHoc from "./HOC/HomeHoc";
 //Component
 import Temp from "./Components/Temp";
+import Master from "./Components/Master";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     <>
       <div >
       <HomeLayoutHoc path="/" exact component={Temp}/>
+      <HomeLayoutHoc path="/:type" exact component={Master}/>
       </div>
     </>
   );
