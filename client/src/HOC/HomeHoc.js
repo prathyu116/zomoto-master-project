@@ -8,7 +8,7 @@ const HomeLayoutHoc = ({component:Component, ...rest}) => {
         <>
          <Route
          {...rest}
-         component={(props)=>(
+         component={()=>(
              <HomeLayout>
                  <Component {...rest} />
              </HomeLayout>
