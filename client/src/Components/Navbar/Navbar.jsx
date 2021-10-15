@@ -60,7 +60,7 @@ const LgNav = () => {
 
 
                     <div className="relative w-full h-full">
-                        <input type="text" className="w-full h-full border-r-2 outline-none" placeholder="3rd mile Bus Stop,periya" />
+                        <input type="text" className="w-full h-full border-r-2 outline-none" placeholder="Kerala,Kasaragod" />
 
                         <AiFillCaretDown className=" absolute right-2 bottom-1" />
                     </div>
@@ -95,10 +95,10 @@ const LgNav = () => {
 const Navbar = () => {
     return (
         <>
-            <nav className="p-4  bg-white items-center">
+            <nav className="p-4   bg-white items-center ">
                
                
-                <div className="md:hidden  ">
+                <div className="md:hidden   ">
                     {
                         // Mobile Screen
                         <MobileNav />
@@ -114,7 +114,7 @@ const Navbar = () => {
                     }
 
                 </div>
-                <div className="hidden lg:block ">
+                <div className="hidden lg:block  ">
                     {
                         // desktop Screen
                         <LgNav />

@@ -59,7 +59,7 @@ const LgTab = () => {
     const { type } = useParams();
     return (
         <>
-            <div className="w-full px-20 py-2 flex  items-center justify-start  gap-20  mt-7 border-b">
+            <div className="w-full px-20 py-2 flex   items-center justify-start  gap-20  mt-7 border-b">
                 {
                     LGData.map((items) => {
                         return (
@@ -68,7 +68,7 @@ const LgTab = () => {
                                     className={
                                         type === items.id
                                             ? "flex flex-row relative items-center gap-4  text-xl text-zomato-400 "
-                                            : "flex flex-row items-center text-xl gap-4"
+                                            : "flex flex-row items-center text-xl gap-4 "
                                     }
                                 >
                                     <div
@@ -153,7 +153,7 @@ const FoodTab = () => {
                     }
 
                 </div>
-                <div className="hidden lg:block  ">
+                <div className="hidden lg:block  mx-12">
                     {
                         // Tablet Screen
                         <LgTab />
