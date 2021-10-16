@@ -18,7 +18,7 @@ Router.post("/signup", async (req, res) => {
     try {
         await ValidateSignup(req.body.credentials);
         //Check whether email or phone number exists
-        await Usermodel.findEmailAndPhone(req.body.credentials);
+        await Usermodel.findByEmailAndPhone(req.body.credentials);
 
 
         //hashing and salting

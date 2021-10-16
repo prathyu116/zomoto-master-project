@@ -52,7 +52,7 @@ const DelevaryCarousal = () => {
             </div>
 
 
-            <div className="sm:hidden md:block lg:block mx-28">
+            <div className="hidden lg:block mx-28">
                 <h1 className="text-xl font-semibold my-3">Eat what makes you happy</h1>
                 <Slider {...settings} className="">
 

@@ -6,16 +6,17 @@ export const LGData =[
             name: "Delevary",
             isActive: false
         },
-        {
-            id: "night",
-            icon: "https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png",
-            name: "Night Life",
-            isActive: false
-        },
+      
         {
             id: "dining",
             icon: "https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png",
             name: "Dining Out",
+            isActive: false
+        },
+        {
+            id: "night",
+            icon: "https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png",
+            name: "Night Life",
             isActive: false
         }
     

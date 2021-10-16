@@ -6,7 +6,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 
 const MobileNav = () => {
     return (<>
-        <div className="items-center justify-between flex w-full md:hidden">
+        <div className="items-center justify-between flex w-full md:hidden  ">
             <div className="w-28">
                 <img
                     src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png"
@@ -95,10 +95,10 @@ const LgNav = () => {
 const Navbar = () => {
     return (
         <>
-            <nav className="p-4   bg-white items-center ">
+            <nav className="p-4 shadow-lg  lg:shadow-none bg-white items-center   ">
                
                
-                <div className="md:hidden   ">
+                <div className="md:hidden    ">
                     {
                         // Mobile Screen
                         <MobileNav />

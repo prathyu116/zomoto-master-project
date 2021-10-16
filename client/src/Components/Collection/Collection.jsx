@@ -1,9 +1,10 @@
 import React from 'react'
+import CollectionCarousal from './CollectionCarousal'
 
 const Collection = () => {
     return (
-        <div>
-            <h1>Dining out</h1>
+        <div className="w-full">
+            <CollectionCarousal />
         </div>
     )
 }
