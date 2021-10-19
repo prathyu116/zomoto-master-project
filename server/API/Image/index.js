@@ -12,8 +12,8 @@ import {s3Upload} from "../../Utilis/AWS/s3";
 
 const Router = express.Router();
 // Multer config
-const storage = multer.memoryStorage();
-const upload = multer({storage});
+const storage = multer.memoryStorage();//upload to ram
+const upload = multer({storage});//ram to server
 
 
 

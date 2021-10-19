@@ -7,6 +7,7 @@ import HomeLayoutHoc from "./HOC/HomeHoc";
 //Component
 import Temp from "./Components/Temp";
 import Master from "./Components/Master";
+import RestaurantLayoutHoc from "./HOC/RestaurantHoC";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div >
       <HomeLayoutHoc path="/" exact component={Temp}/>
       <HomeLayoutHoc path="/:type" exact component={Master}/>
+      <RestaurantLayoutHoc path="/restaurant/:id" component={Temp}/>
       </div>
     </>
   );

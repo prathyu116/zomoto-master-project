@@ -4,15 +4,19 @@ const DineoutRestaurantListItem = () => {
     return (
         <>
             <div>
-                <div className="bg-white rounded-md  shadow-lg py-5 relative ">
-                    <div className=' w-80 h-52 lg:w-84 lg:h-60  '>
+                <div className="bg-white rounded-md  shadow-lg py-5  ">
+                    <div className=' w-80 h-52 lg:w-84 lg:h-60 relative '>
+                    <div className="flex w-full justify-between absolute bottom-2 ">
+                    <p className="  bg-pink-600 p-1 text-white">Pro - Get 15% off</p>
+                    <span className="bg-white opacity-60 p-1 rounded mr-2">42 min</span>
+                    </div>
                         <img
                             src="https://b.zmtcdn.com/data/pictures/2/18805782/3cfcf08a6ba56e503314b8e874d430a2_featured_v2.jpg?output-format=webp"
                             alt="restaurant"
                             className="w-full h-full rounded-lg  object-cover "
                         />
                     </div>
-                    <p className="absolute bottom-28 left-0 bg-pink-600 p-1 text-white">Pro - Get 15% off</p>
+                   
                     <div className="flex flex-row items-start justify-between">
                         <div>
                             <h3 className="my-2 text-base font-medium ">Chill Grill & Bar</h3>

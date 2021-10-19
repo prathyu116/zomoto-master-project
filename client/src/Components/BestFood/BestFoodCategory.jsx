@@ -4,7 +4,14 @@ const BestFoodCategory = () => {
     return (
         <div>
             <div className="bg-white rounded-md  shadow-lg py-5">
-                <div className='w-80 h-52 lg:w-84 lg:h-60 '>
+                <div className='w-80 h-52 lg:w-84 lg:h-60 relative'>
+                <div className="flex w-full justify-between items-center absolute bottom-2 ">
+                    <div className="flex flex-col items-start gap-1">
+                    <p className="  bg-pink-600  text-white">Pro - Get 15% off</p>
+                    <p className="  bg-blue-800  text-white">15%off</p>
+                    </div>
+                    <span className="bg-white opacity-60 flex items-end rounded mr-2">42 km</span>
+                    </div>
                     <img
                         src="https://b.zmtcdn.com/data/pictures/2/19619482/15dfba7f56b43a4d9410367fe6ce977f_o2_featured_v2.jpg?output-format=webp"
                         alt="Burger"
